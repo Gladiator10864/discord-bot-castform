@@ -14,6 +14,12 @@ Consider using [pnpm](http://pnpm.js.org) to fetch dependencies since that's wha
 
 ## Configure
 
+### Servers
+
+These are stored in `servers.json`
+
+name the servers whatever you want on the first line, add what locations you want the server to have in "filter", the id of the server is "guild" and channel is the channel id. This is manual for now, it could be done through discord eventually
+
 ### Locations
 
 The locations are configured in the `location.json` file.
@@ -35,7 +41,7 @@ You'll need one from [AccuWeather APIs](https://developer.accuweather.com).
 
 A free one will do, unless you add far too many locations and run out of your daily limit of 50 calls. That gives you 16 locations to query three times a day. 
 
-You'd need to set this as an environmental variable called `AWKEY`.
+Create a file called `secret.json` with the variables `AWKEY` equal to your AccuWeather key as well as your bot's token equal to `DISCORDKEY`
 
 ...Although you'll eventually want to query hourly when the pull hours change! At this stage, this is most easily done just by modifying `index.js`. The constant that sets the pull hours is called `PULLHOUR`. There are other handy debug helpers commented out within the file.
 
