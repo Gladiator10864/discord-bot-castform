@@ -26,14 +26,24 @@ The locations are configured in the `location.json` file.
 
 It should be pretty self-explanatory from the default config for Kolkata: An object where the keys are shorthand names for the weather supercells you want to query, with longer names defined within the value object alongside the essential AccuWeather location ID.
 
-You can get the AccuWeather location ID for your location by simply visiting your desired area from a browser and copying the id, like so: 
+You can get the AccuWeather location ID for your location by first breaking your area down by level 10 S2 cells. https://www.pogomap.info has a great interface for seeing such cells.
+For every cell you want to forecast pick a point within the cell and input its longitude and latitude into the form on this webpage
 
-```
-https://www.accuweather.com/en/in/kolkata/206690/weather-forecast/206690
-                                  -area-- --ID--                  --ID--
-```
+https://developer.accuweather.com/accuweather-locations-api/apis/get/locations/v1/cities/geoposition/search
 
-In my city the weather cells are definitely level 10 S2 cells.
+You should get an output like this
+```
+ "Version": 1,
+  "Key": "1868",
+  "Type": "City",
+  "Rank": 45,
+  "LocalizedName": "Green Bay",
+  "EnglishName": "Green Bay",
+  "PrimaryPostalCode": "54303",
+  "Region":
+```
+With "key" being defined on the second line. That's your location ID for that cell.
+
 
 ### AccuWeather API Key
 
