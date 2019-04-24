@@ -63,6 +63,8 @@ The bot needs at least the following permissions number: `19520`
 
 You can refer to [An Idiot's Guide](https://anidiots.guide/) for more information. No, that's not me calling _you_ one, I didn't write the guide :D
 
+Once the bot is added to your server start it up with: `node .` (That's node[space][period])
+
 ## Usage
 
 ### Set Forecast Channel
